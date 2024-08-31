@@ -4,7 +4,7 @@
 In the expense tracker application, you can write down your salary and expenses, and it will show you a list of them, and how much you have spent and how much you have earned, and at the end, it will also show the remaining balance.
 
 ### What hooks and libraries did I use for this application? 
-Hooks I used: Custom hook, useContext, useReducer and useState.
+Hooks I used : 
 useState : for input value
 custom hook : For use reducer actions
 useReducer : for add and delete transactions

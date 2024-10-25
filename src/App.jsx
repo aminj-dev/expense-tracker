@@ -1,21 +1,21 @@
 import './App.css';
-import { Header } from './component/Header';
-import { Balance } from './component/Balance';
-import { AddTransaction } from './component/AddTransaction';
-import { IncomeExpenses } from './component/IncomeExpenses';
-import { TransactionList } from './component/TransactionList';
-import { GlobalProvider } from './context/GlobalState';
+import { Main } from './page/main/Main';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Chart } from "./page/chart/Chart";
+import { GlobalProvider } from "./context/GlobalState"
+import { Nav } from './component/Nav';
 
 function App() {
   return (
     <GlobalProvider>
-      <Header/>
-      <div className="container">
-        <Balance/>
-        <IncomeExpenses/>
-        <TransactionList/>
-        <AddTransaction/>
-      </div>
+      <Router>
+        <Nav/>
+        <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/chart' element={<Chart/>}/>
+          <Route path='*' element={<div className='notFound'>Not Found</div>}/>
+        </Routes>
+      </Router>
     </GlobalProvider>
   )
 }
